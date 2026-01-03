@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alanas Jakonis | Cybersecurity & Data Engineer</title>
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda; /* Cyber Teal */
+            --card-bg: rgba(17, 34, 64, 0.7);
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: 'Courier New', monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- BACKGROUND --- */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+        }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.1);
+        }
+
+        h1, h2, h3 { color: #e6f1ff; margin: 0 0 20px 0; }
+        
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            color: var(--accent);
+        }
+        
+        h2::after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 1px;
+            background: #233554;
+            margin-left: 20px;
+        }
+
+        .section-header { margin-bottom: 40px; }
+
+        a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+        a:hover { text-decoration: underline; }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: none;
+        }
+
+        .hero-intro {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-bar {
+            margin-top: 30px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+        }
+
+        .contact-bar span { margin-right: 20px; color: var(--text-secondary); }
+        .contact-bar i { color: var(--accent); margin-right: 5px; }
+
+        /* --- EXPERIENCE CARDS --- */
+        .job-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .job-card:hover { transform: translateX(10px); }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .job-title { font-size: 22px; font-weight: bold; color: #e6f1ff; }
+        .job-company { color: var(--accent); font-family: var(--font-mono); font-size: 16px; }
+        .job-date { font-family: var(--font-mono); font-size: 14px; color: var(--text-secondary); }
+        
+        .job-desc ul { padding-left: 20px; }
+        .job-desc li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+        }
+        .job-desc li::before {
+            content: "▹";
+            position: absolute;
+            left: -20px;
+            color: var(--accent);
+        }
+
+        /* --- EDUCATION --- */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .edu-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        /* --- SKILLS --- */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .skill-category h3 { color: var(--accent); font-family: var(--font-mono); font-size: 18px; }
+        .skill-list { list-style: none; padding: 0; }
+        .skill-list li {
+            margin-bottom: 8px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <div class="container">
+        
+        <section class="hero">
+            <div class="hero-intro">Hi, my name is</div>
+            <h1>Alanas Jakonis.</h1>
+            <h1 style="color: var(--text-secondary);">Cybersecurity & Data Engineer.</h1>
+            <p style="max-width: 600px; font-size: 18px; margin-top: 20px;">
+                I am a bilingual (English/Lithuanian) engineer based in <strong>New Ross, Co. Wexford</strong>.
+                I specialize in implementing MDR security systems, SQL data pipelines, and optimizing IT infrastructure.
+            </p>
+            <div class="contact-bar">
+                <span>📧 jakonis77@gmail.com</span>
+                <span>📱 +353 85 773 5199</span>
+                <span>📍 New Ross, Ireland</span>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>01. Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3 class="job-title">MSc Cybersecurity, Privacy & Trust</h3>
+                    <p class="job-company">South East Technological University (Carlow)</p>
+                    <p class="job-date">2021 - 2023</p>
+                </div>
+                <div class="edu-card">
+                    <h3 class="job-title">BSc Software Systems Development</h3>
+                    <p class="job-company">Waterford Institute of Technology</p>
+                    <p class="job-date">2016 - 2020</p>
+                    <p style="font-size: 14px; color: var(--text-secondary);">Honors Degree</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>02. Professional Experience</h2>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">IT & Data Engineer</span>
+                        <span class="job-company"> @ MEDITE SMARTPLY</span>
+                    </div>
+                    <span class="job-date">Nov 2022 – Present | Waterford/Clonmel</span>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Cybersecurity (MDR):</strong> Played a key role in the implementation of MDR, enhancing the company's cybersecurity posture by providing continuous monitoring, detection, and response to security threats.</li>
+                        <li><strong>Helpdesk Optimization:</strong> Successfully directed the implementation of a robust IT helpdesk system, streamlining IT operations and <strong>reducing response times by 25%</strong>.</li>
+                        <li><strong>Compliance (Qpulse):</strong> Managed the deployment of Qpulse (Quality Management System), ensuring compliance with industry standards and resulting in a <strong>20% increase in operational efficiency</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">IT Analyst</span>
+                        <span class="job-company"> @ MODUBUILD</span>
+                    </div>
+                    <span class="job-date">Feb 2021 – Nov 2022 | Kilkenny</span>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>System Design:</strong> Successfully spearheaded the design and deployment of a comprehensive IT helpdesk system, <strong>improving ticket resolution time by 30%</strong>.</li>
+                        <li><strong>Data Analysis:</strong> Conducted initial and advanced data analysis to assess data quality and extract meaningful insights for management reports.</li>
+                        <li><strong>Presentation:</strong> Presented data findings to management, aiding strategic decision-making.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Web Developer</span>
+                        <span class="job-company"> @ WEB FRONT</span>
+                    </div>
+                    <span class="job-date">Nov 2020 – Feb 2021 | Remote</span>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Development:</strong> Managed development, maintenance, and troubleshooting of client websites, ensuring seamless functionality.</li>
+                        <li><strong>Client Support:</strong> Provided timely and effective support for resolving website issues, enhancing user satisfaction.</li>
+                        <li><strong>Tech Stack:</strong> Utilized a range of web technologies to deliver high-quality, responsive web solutions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Web Developer</span>
+                        <span class="job-company"> @ 2CUBED</span>
+                    </div>
+                    <span class="job-date">Sep 2018 – May 2019 | New Ross</span>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Client Focus:</strong> Collaborated closely with clients to understand their needs and translated those requirements into effective web solutions.</li>
+                        <li><strong>Performance:</strong> Implemented best practices in web development to enhance site speed, SEO, and overall user experience.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>03. Technical Skills</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3>Cybersecurity & Tools</h3>
+                    <ul class="skill-list">
+                        <li>Managed Detection & Response (MDR)</li>
+                        <li>TheHive (SOC Platform)</li>
+                        <li>Wireshark (Packet Analysis)</li>
+                        <li>OWASP ZAP</li>
+                        <li>Qpulse (QMS)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>SQL & SQL Server</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure & Cloud</h3>
+                    <ul class="skill-list">
+                        <li>AWS & Microsoft Azure</li>
+                        <li>VMware vSphere</li>
+                        <li>Windows Servers</li>
+                        <li>Linux / MacOS</li>
+                        <li>ERP Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages & Interests</h3>
+                    <ul class="skill-list">
+                        <li>English (Native)</li>
+                        <li>Lithuanian (Native)</li>
+                        <li>Weightlifting & Sports</li>
+                        <li>Problem Solving</li>
+                        <li>Outdoor Activities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Designed by Alanas Jakonis | 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- ANIMATIONS ---
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if(this.x < 0 || this.x > width) this.vx *= -1;
+                if(this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(100, 255, 218, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            particles = [];
+            for(let i=0; i < window.innerWidth/15; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => { resize(); init(); });
+        resize(); init(); animate();
+    </script>
+</body>
+</html>
