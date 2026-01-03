@@ -72,8 +72,6 @@
             margin-left: 20px;
         }
 
-        .section-header { margin-bottom: 40px; }
-
         a { color: var(--accent); text-decoration: none; transition: 0.3s; }
         a:hover { text-decoration: underline; }
 
@@ -100,7 +98,6 @@
         }
 
         .contact-bar span { margin-right: 20px; color: var(--text-secondary); }
-        .contact-bar i { color: var(--accent); margin-right: 5px; }
 
         /* --- EXPERIENCE CARDS --- */
         .job-card {
@@ -141,47 +138,22 @@
             color: var(--accent);
         }
 
-        /* --- EDUCATION --- */
-        .edu-grid {
+        /* --- EDUCATION & SKILLS --- */
+        .edu-grid, .skills-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-        .edu-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        /* --- SKILLS --- */
-        .skills-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
+        .edu-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .skills-wrapper { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        
+        .edu-card { background: var(--card-bg); padding: 25px; border-radius: 8px; }
+        
         .skill-category h3 { color: var(--accent); font-family: var(--font-mono); font-size: 18px; }
         .skill-list { list-style: none; padding: 0; }
-        .skill-list li {
-            margin-bottom: 8px;
-            font-family: var(--font-mono);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-        .skill-list li::before {
-            content: "•";
-            color: var(--accent);
-            margin-right: 10px;
-        }
+        .skill-list li { margin-bottom: 8px; font-family: var(--font-mono); font-size: 14px; display: flex; align-items: center; }
+        .skill-list li::before { content: "•"; color: var(--accent); margin-right: 10px; }
 
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-family: var(--font-mono);
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
+        footer { text-align: center; padding: 40px; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); }
     </style>
 </head>
 <body>
@@ -196,7 +168,7 @@
             <h1 style="color: var(--text-secondary);">Cybersecurity & Data Engineer.</h1>
             <p style="max-width: 600px; font-size: 18px; margin-top: 20px;">
                 I am a bilingual (English/Lithuanian) engineer based in <strong>New Ross, Co. Wexford</strong>.
-                I specialize in implementing MDR security systems, SQL data pipelines, and optimizing IT infrastructure.
+                I specialize in implementing MDR security systems, SQL data pipelines, and Data Governance.
             </p>
             <div class="contact-bar">
                 <span>📧 jakonis77@gmail.com</span>
@@ -231,13 +203,31 @@
                         <span class="job-title">IT & Data Engineer</span>
                         <span class="job-company"> @ MEDITE SMARTPLY</span>
                     </div>
-                    <span class="job-date">Nov 2022 – Present | Waterford/Clonmel</span>
+                    <span class="job-date">July 2023 – Present | Waterford,Clonmel</span>
                 </div>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>Cybersecurity (MDR):</strong> Played a key role in the implementation of MDR, enhancing the company's cybersecurity posture by providing continuous monitoring, detection, and response to security threats.</li>
-                        <li><strong>Helpdesk Optimization:</strong> Successfully directed the implementation of a robust IT helpdesk system, streamlining IT operations and <strong>reducing response times by 25%</strong>.</li>
-                        <li><strong>Compliance (Qpulse):</strong> Managed the deployment of Qpulse (Quality Management System), ensuring compliance with industry standards and resulting in a <strong>20% increase in operational efficiency</strong>.</li>
+                        <li><strong>Cybersecurity (MDR):</strong> Spearheaded the deployment of MDR, establishing continuous 24/7 security monitoring for the plant.</li>
+                        <li><strong>Threat Analysis:</strong> Utilized <strong>TheHive</strong> and <strong>Wireshark</strong> to analyze network traffic and manage incident response.</li>
+                        <li><strong>Data Engineering:</strong> Managed complex data pipelines using <strong>SQL Server</strong> for production reporting.</li>
+                        <li><strong>Compliance (Qpulse):</strong> Administered Qpulse (QMS) to drive data governance audits and ensure compliance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Data Governance Analyst</span>
+                        <span class="job-company"> @ CASTLEBRIDGE</span>
+                    </div>
+                    <span class="job-date">Nov 2022 – June 2023 | Wexford</span>
+                </div>
+                <div class="job-desc">
+                    <ul>
+                        <li><strong>Auditing:</strong> Performed comprehensive audits and consultations for clients on data protection (GDPR) and compliance.</li>
+                        <li><strong>Governance Frameworks:</strong> Developed strategies for effective data governance, enhancing organizational data security.</li>
+                        <li><strong>Consultancy:</strong> Collaborated with clients to implement data protection measures and best practices.</li>
                     </ul>
                 </div>
             </div>
@@ -252,9 +242,9 @@
                 </div>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>System Design:</strong> Successfully spearheaded the design and deployment of a comprehensive IT helpdesk system, <strong>improving ticket resolution time by 30%</strong>.</li>
-                        <li><strong>Data Analysis:</strong> Conducted initial and advanced data analysis to assess data quality and extract meaningful insights for management reports.</li>
-                        <li><strong>Presentation:</strong> Presented data findings to management, aiding strategic decision-making.</li>
+                        <li><strong>System Design:</strong> Designed and deployed a comprehensive IT helpdesk system, improving ticket resolution by <strong>30%</strong>.</li>
+                        <li><strong>Data Analysis:</strong> Conducted advanced SQL analysis to extract meaningful insights for management strategy.</li>
+                        <li><strong>Infrastructure:</strong> Managed user access, tickets, and hardware maintenance for a growing team.</li>
                     </ul>
                 </div>
             </div>
@@ -269,9 +259,8 @@
                 </div>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>Development:</strong> Managed development, maintenance, and troubleshooting of client websites, ensuring seamless functionality.</li>
-                        <li><strong>Client Support:</strong> Provided timely and effective support for resolving website issues, enhancing user satisfaction.</li>
-                        <li><strong>Tech Stack:</strong> Utilized a range of web technologies to deliver high-quality, responsive web solutions.</li>
+                        <li><strong>Secure Dev:</strong> Developed websites with a focus on security best practices (XSS/SQLi mitigation).</li>
+                        <li><strong>Remote Work:</strong> Managed a fully remote workflow for international clients.</li>
                     </ul>
                 </div>
             </div>
@@ -286,8 +275,8 @@
                 </div>
                 <div class="job-desc">
                     <ul>
-                        <li><strong>Client Focus:</strong> Collaborated closely with clients to understand their needs and translated those requirements into effective web solutions.</li>
-                        <li><strong>Performance:</strong> Implemented best practices in web development to enhance site speed, SEO, and overall user experience.</li>
+                        <li>Developed functional and visually appealing websites using PHP and JavaScript.</li>
+                        <li>Translated business requirements into effective web solutions.</li>
                     </ul>
                 </div>
             </div>
@@ -303,7 +292,7 @@
                         <li>TheHive (SOC Platform)</li>
                         <li>Wireshark (Packet Analysis)</li>
                         <li>OWASP ZAP</li>
-                        <li>Qpulse (QMS)</li>
+                        <li>GDPR / Data Governance</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -317,23 +306,12 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Infrastructure & Cloud</h3>
+                    <h3>Infrastructure</h3>
                     <ul class="skill-list">
-                        <li>AWS & Microsoft Azure</li>
+                        <li>AWS & Azure</li>
                         <li>VMware vSphere</li>
-                        <li>Windows Servers</li>
-                        <li>Linux / MacOS</li>
-                        <li>ERP Systems</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Languages & Interests</h3>
-                    <ul class="skill-list">
-                        <li>English (Native)</li>
-                        <li>Lithuanian (Native)</li>
-                        <li>Weightlifting & Sports</li>
-                        <li>Problem Solving</li>
-                        <li>Outdoor Activities</li>
+                        <li>Windows Server / Linux</li>
+                        <li>Qpulse (QMS)</li>
                     </ul>
                 </div>
             </div>
